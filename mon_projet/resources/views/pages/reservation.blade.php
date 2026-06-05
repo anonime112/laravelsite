@@ -31,7 +31,12 @@
 						</h3>
 					</div>
 
-					<form class="wrap-form-reservation size22 m-l-r-auto">
+					@if(session('success'))
+						<div class="alert alert-success t-center">{{ session('success') }}</div>
+					@endif
+
+					<form class="wrap-form-reservation size22 m-l-r-auto" method="POST" action="{{ route('reservation.store') }}">
+						@csrf
 						<div class="row">
 							<div class="col-md-4">
 								<!-- Date -->
@@ -122,7 +127,7 @@
 								</span>
 
 								<div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="phone" placeholder="Votre tÃ©lÃ©phone">
+									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="phone" placeholder="Votre téléphone">
 								</div>
 							</div>
 

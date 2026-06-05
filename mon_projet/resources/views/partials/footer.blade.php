@@ -94,19 +94,19 @@
 					<!-- Galerie footer -->
 					<div class="wrap-gallery-footer flex-w">
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-01.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-01.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/plats2.jpeg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-02.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-02.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/espace5.jpg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-03.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-03.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/espace4.jpg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-04.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-04.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/bois1.jpeg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-05.jpg') }}" data-lightbox="gallery-footer">
@@ -118,7 +118,7 @@
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-07.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-07.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/espace5.jpg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-08.jpg') }}" data-lightbox="gallery-footer">
@@ -126,7 +126,7 @@
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-09.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-09.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/espace2.jpg') }}" alt="GALLERY">
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-10.jpg') }}" data-lightbox="gallery-footer">
@@ -138,7 +138,7 @@
 						</a>
 
 						<a class="item-gallery-footer wrap-pic-w" href="{{ asset('images/photo-gallery-12.jpg') }}" data-lightbox="gallery-footer">
-							<img src="{{ asset('images/photo-gallery-thumb-12.jpg') }}" alt="GALLERY">
+							<img src="{{ asset('img/espace1.jpg') }}" alt="GALLERY">
 						</a>
 					</div>
 

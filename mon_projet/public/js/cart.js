@@ -81,6 +81,7 @@ function renderCart() {
         `;
         cartSubtotal.textContent = '0 F';
         cartTotal.textContent = '0 F';
+        renderCheckoutSummary();
         return;
     }
     
@@ -117,6 +118,58 @@ function renderCart() {
     cartItems.innerHTML = html;
     cartSubtotal.textContent = `${subtotal.toLocaleString()} F`;
     cartTotal.textContent = `${subtotal.toLocaleString()} F`;
+    renderCheckoutSummary();
+}
+
+// Render checkout summary
+function renderCheckoutSummary() {
+    const summary = document.getElementById('checkout-order-summary');
+    if (!summary) return;
+
+    if (cart.length === 0) {
+        summary.innerHTML = '<p class="txt23">Aucun article sélectionné.</p>';
+        return;
+    }
+
+    let subtotal = 0;
+    const items = cart.map((item) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        return `
+            <div class="checkout-order-line">
+                <div>
+                    <strong>${item.name}</strong>
+                    <span>${item.quantity} x ${item.price.toLocaleString()} F</span>
+                </div>
+                <b>${itemTotal.toLocaleString()} F</b>
+            </div>
+        `;
+    }).join('');
+
+    summary.innerHTML = `
+        ${items}
+        <div class="checkout-order-total">
+            <span>Total</span>
+            <strong>${subtotal.toLocaleString()} F</strong>
+        </div>
+    `;
+}
+
+// Show checkout form
+function showCheckoutForm() {
+    const panel = document.getElementById('checkout-panel');
+
+    if (cart.length === 0) {
+        showNotification('Ajoutez au moins un article avant de commander');
+        return;
+    }
+
+    if (!panel) return;
+
+    panel.hidden = false;
+    renderCheckoutSummary();
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Show notification
@@ -275,6 +328,27 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Rendering cart on cart page');
         renderCart();
     }
+
+    const checkoutButton = document.getElementById('checkout-button');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', showCheckoutForm);
+    }
+
+    const checkoutForm = document.getElementById('checkout-form');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', function(event) {
+            if (cart.length === 0) {
+                event.preventDefault();
+                showNotification('Votre panier est vide');
+                return;
+            }
+
+            const cartPayload = document.getElementById('cart-payload');
+            if (cartPayload) {
+                cartPayload.value = JSON.stringify(cart);
+            }
+        });
+    }
 });
 
 // Keep cart buttons reliable even when a layout/filter plugin moves menu items.
@@ -297,4 +371,3 @@ document.addEventListener('click', function(event) {
 
     addToCart(name, price);
 });
-

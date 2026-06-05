@@ -2006,6 +2006,101 @@ body {padding-right: 0px !important;}
   border-bottom: 1px solid rgba(45, 34, 28, 0.12);
 }
 
+.cart-checkout-panel[hidden] {
+  display: none;
+}
+
+.checkout-card {
+  height: 100%;
+  padding: 34px;
+  border: 1px solid rgba(245, 111, 59, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 38px rgba(35, 24, 18, 0.10);
+}
+
+.checkout-note {
+  color: #6f625d;
+  line-height: 1.7;
+}
+
+.checkout-field {
+  height: 50px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.checkout-field input,
+.checkout-field select,
+.checkout-field textarea {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.checkout-field select {
+  appearance: auto;
+}
+
+.checkout-field-textarea {
+  height: auto;
+  min-height: 118px;
+}
+
+.checkout-order-card {
+  background: #241914;
+  color: #fff;
+}
+
+.checkout-order-card .tit5,
+.checkout-order-card .txt23 {
+  color: #fff;
+}
+
+.checkout-order-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.checkout-order-line strong,
+.checkout-order-line span {
+  display: block;
+}
+
+.checkout-order-line strong {
+  color: #fff;
+  font-size: 15px;
+}
+
+.checkout-order-line span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.checkout-order-line b {
+  color: #ffc857;
+  white-space: nowrap;
+}
+
+.checkout-order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  color: #fff;
+}
+
+.checkout-order-total strong {
+  color: #ffc857;
+  font-size: 22px;
+}
+
 @media (max-width: 991px) {
   .section-mainmenu .item-gallery {
     width: calc(100% - 30px);
@@ -2019,7 +2114,8 @@ body {padding-right: 0px !important;}
 @media (max-width: 576px) {
   .section-mainmenu .menu-category,
   .section-cart .wrap-cart,
-  .section-cart .wrap-cart-summary {
+  .section-cart .wrap-cart-summary,
+  .checkout-card {
     padding: 24px 16px;
   }
 

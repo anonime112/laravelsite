@@ -1,364 +1,39 @@
 @extends('layouts.app')
 
-@section('title', 'Actualité — Iguyzza')
+@section('title', $post->title . ' — Iguyzza')
 
 @section('content')
 <!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url('{{ asset('images/bg-title-page-03.jpg') }}');">
-		<h2 class="tit6 t-center">
-			Blog
-		</h2>
-	</section>
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url('{{ asset($post->image_path ?: 'images/bg-title-page-03.jpg') }}');">
+	<h2 class="tit6 t-center">{{ $post->title }}</h2>
+</section>
 
+<div class="ig-orange-band"></div>
 
-	<!-- Content page -->
-	<section>
-		<div class="bread-crumb bo5-b p-t-17 p-b-17">
-			<div class="container">
-				<a href="{{ route('home') }}" class="txt27">
-					Accueil
-				</a>
+<!-- Content page -->
+<section class="bg1-pattern p-t-110 p-b-100">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<div class="bgwhite bo-rad-10 p-l-40 p-r-40 p-t-45 p-b-45">
+					@if($post->published_at)
+						<p class="txt4 m-b-18">{{ $post->published_at->format('d/m/Y') }} par {{ $post->author_name ?: 'Iguyzza' }}</p>
+					@endif
 
-				<span class="txt29 m-l-10 m-r-10">/</span>
+					<h3 class="tit5 m-b-25">{{ $post->title }}</h3>
+					<p class="m-b-25">{{ $post->excerpt }}</p>
 
-				<a href="{{ route('blog') }}" class="txt27">
-					Actualités
-				</a>
-
-				<span class="txt29 m-l-10 m-r-10">/</span>
-
-				<span class="txt29">
-					Soirées lounge à Abidjan
-				</span>
-			</div>
-		</div>
-
-		<div class="container">
-			<div class="row ">
-				<div class="col-md-8 col-lg-9">
-					<div class="p-t-80 p-b-124 bo5-r p-r-50 h-full p-r-0-md bo-none-md">
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<!-- - -->
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-05.jpg') }}" alt="IMG-BLOG">
-								</a>
-
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										28
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
-							</div>
-
-							<!-- - -->
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Cooking recipe Cuisine</a>
-								</h4>
-
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										28 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Bienvenue dans l'univers Iguyzza, consectetur adipiscing elit. Vivamus eget mi sem. Nulla facilisi. Sed ultricies eros a nibh tempus, in sodales mi vestibulum. Nullam quis dui ac nisl ultrices euismod et sit amet urna. Morbi semper sapien quis ex tempor, sit amet scelerisque eros rhoncus. Cras scelerisque auctor gravida. Nunc fermentum luctus rhoncus. Nulla vulputate fermentum convallis. In quis pellentesque tortor. Cras metus nibh, gravida vitae ante vel, finibus semper tellus. Nulla vel tincidunt magna. Morbi tempor velit lectus, eu commodo quam volutpat vitae.
-								</p>
-							</div>
-						</div>
-
-						<!-- Leave a comment -->
-						<form class="leave-comment p-t-10">
-							<h4 class="txt33 p-b-14">
-								Laisser un commentaire
-							</h4>
-
-							<p>
-								Votre adresse e-mail ne sera pas publiée. Les champs obligatoires sont indiqués *
-							</p>
-
-							<textarea class="bo-rad-10 size29 bo2 txt10 p-l-20 p-t-15 m-b-10 m-t-40" name="commentent" placeholder="Votre commentaire..."></textarea>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name" placeholder="Nom *">
-							</div>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-20">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder="E-mail *">
-							</div>
-
-							<div class="size30 bo2 bo-rad-10 m-t-3 m-b-30">
-								<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="website" placeholder="Website">
-							</div>
-
-							<!-- Button3 -->
-							<button type="submit" class="btn3 flex-c-m size31 txt11 trans-0-4">
-								Publier
-							</button>
-						</form>
+					<div class="txt23" style="line-height: 1.9;">
+						{!! nl2br(e($post->content)) !!}
 					</div>
-				</div>
 
-				<div class="col-md-4 col-lg-3">
-					<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
-						<!-- Search -->
-						<div class="search-sidebar2 size12 bo2 pos-relative">
-							<input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="text" name="search" placeholder="Search">
-							<button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
-						</div>
-
-						<!-- Categories -->
-						<div class="categories">
-							<h4 class="txt33 bo5-b p-b-35 p-t-58">
-								Categories
-							</h4>
-
-							<ul>
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Cooking recipe
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Cuisine foods
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Événements Design
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Lounge Place
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										WordPress
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<!-- Most Popular -->
-						<div class="popular">
-							<h4 class="txt33 p-b-35 p-t-58">
-								Most popular
-							</h4>
-
-							<ul>
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-11.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Best Places for Wine
-										</a>
-
-										<span class="txt14">
-											3 days ago
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-12.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Eggs and Cheese
-										</a>
-
-										<span class="txt14">
-											July 2, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-13.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Style the Wedding Party
-										</a>
-
-										<span class="txt14">
-											May 28, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-14.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Cooking recipe Cuisine
-										</a>
-
-										<span class="txt14">
-											May 25, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-15.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Cocktails et tapas fraîchement préparés
-										</a>
-
-										<span class="txt14">
-											May 2, 2017
-										</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-
-						<!-- Archive -->
-						<div class="archive">
-							<h4 class="txt33 p-b-20 p-t-43">
-								Archive
-							</h4>
-
-							<ul>
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										uly 2018
-									</a>
-
-									<span class="txt29">
-										(9)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										June 2018
-									</a>
-
-									<span class="txt29">
-										(39)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										May 2018
-									</a>
-
-									<span class="txt29">
-										(29)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										April  2018
-									</a>
-
-									<span class="txt29">
-										(35)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										March 2018
-									</a>
-
-									<span class="txt29">
-										(22)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										February 2018
-									</a>
-
-									<span class="txt29">
-										(32)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										January 2018
-									</a>
-
-									<span class="txt29">
-										(21)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										December 2017
-									</a>
-
-									<span class="txt29">
-										(26)
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
+					<a href="{{ route('blog') }}" class="txt4 dis-block m-t-35">
+						<i class="fa fa-long-arrow-left m-r-10" aria-hidden="true"></i>
+						Retour aux actualités
+					</a>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 @endsection

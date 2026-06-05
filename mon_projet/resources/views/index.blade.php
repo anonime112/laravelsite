@@ -319,6 +319,45 @@
 	</section>
 
 
+	@if(isset($events) && $events->isNotEmpty())
+	<!-- Events from database -->
+	<section class="section-event-db bg1-pattern p-t-100 p-b-100">
+		<div class="container">
+			<div class="title-event t-center m-b-52">
+				<span class="tit2 p-l-15 p-r-15">Prochains</span>
+				<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">Événements</h3>
+			</div>
+
+			<div class="row">
+				@foreach($events as $event)
+					<div class="col-md-4 p-b-30">
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+								<img src="{{ asset($event->image_path ?: 'images/bg-event-01.jpg') }}" alt="{{ $event->title }}">
+							</div>
+
+							<div class="wrap-text-blo1 p-t-35">
+								<h4 class="txt5 color0-hov trans-0-4 m-b-13">{{ $event->title }}</h4>
+
+								@if($event->starts_at)
+									<p class="txt4 m-b-12">{{ $event->starts_at->format('d/m/Y à H:i') }}</p>
+								@endif
+
+								<p class="m-b-20">{{ $event->description }}</p>
+
+								<a href="{{ route('reservation') }}" class="txt4">
+									Réserver
+									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				@endforeach
+			</div>
+		</div>
+	</section>
+	@endif
+
 	<!-- Event -->
 	<section class="section-event">
 		<div class="wrap-slick2">
@@ -605,7 +644,12 @@
 						</h3>
 					</div>
 
-					<form class="wrap-form-booking">
+					@if(session('success'))
+						<div class="alert alert-success t-center">{{ session('success') }}</div>
+					@endif
+
+					<form class="wrap-form-booking" method="POST" action="{{ route('reservation.store') }}">
+						@csrf
 						<div class="row">
 							<div class="col-md-6">
 								<!-- Date -->

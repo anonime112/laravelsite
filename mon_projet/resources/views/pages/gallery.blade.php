@@ -18,7 +18,60 @@
 
 
 	<!-- Galerie -->
-	<div class="section-gallery p-t-118 p-b-100">
+	<div class="section-gallery p-t-118 p-b-100 bg2">
+		<div class="container">
+				<div class="title-section-ourmenu t-center m-b-22">
+				<a href="index.html" class="logo-section-wrap m-b-15">
+					<img src="images/icons/logo.png" alt="Iguyzza" class="logo-section logo-section--sm">
+				</a>
+				<span class="tit2 t-center">
+					Découvrez
+				</span>
+
+				<h3 class="tit5 t-center m-t-2">
+					Notre espace
+				</h3>
+			</div>
+			<div class="row">
+                <div class="col-md-8">
+
+					<div class="row">
+						<div class="col-16 ">
+							<!-- video -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30 video">
+								<video width="100%" height="100%" controls autoplay muted loop>
+									<source src="img/video.mp4" type="video/mp4">
+									Votre navigateur ne supporte pas la vidéo.
+								</video>
+							</div>
+						</div>
+				
+				
+
+				
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-12">
+							<!-- Item our menu -->
+							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
+								<img src="img/571168370_122126454290968359_877040687061528344_n.jpg" alt="IMG-MENU">
+
+								
+							</div>
+						</div>
+
+					
+					</div>
+				</div>
+			</div>
+			
+
+		</div>
+
+		
+
 		<div class="container t-center m-b-40">
 			<a href="{{ route('home') }}" class="logo-section-wrap">
 				<img src="{{ asset('images/icons/logo.png') }}" alt="Iguyzza" class="logo-section logo-section--sm">
@@ -49,7 +102,7 @@
 		<div class="wrap-gallery isotope-grid flex-w p-l-25 p-r-25">
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events guests">
-				<img src="{{ asset('img/548330204_122119031846968359_2643696780765774991_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace1.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/548330204_122119031846968359_2643696780765774991_n.jpg') }}" data-lightbox="gallery"></a>
@@ -61,7 +114,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom food">
-				<img src="{{ asset('img/561537983_122125478630968359_5990106595369622758_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace2.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/561537983_122125478630968359_5990106595369622758_n.jpg') }}" data-lightbox="gallery"></a>
@@ -73,7 +126,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events">
-				<img src="{{ asset('img/565655299_122125014536968359_8373653522952522296_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace3.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/565655299_122125014536968359_8373653522952522296_n.jpg') }}" data-lightbox="gallery"></a>
@@ -85,7 +138,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom food">
-				<img src="{{ asset('img/566199314_122125219058968359_6497133020676800954_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace4.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/566199314_122125219058968359_6497133020676800954_n.jpg') }}" data-lightbox="gallery"></a>
@@ -97,7 +150,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom food">
-				<img src="{{ asset('img/567521816_122125478618968359_1312821641899528111_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace5.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/567521816_122125478618968359_1312821641899528111_n.jpg') }}" data-lightbox="gallery"></a>
@@ -109,7 +162,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom interior guests">
-				<img src="{{ asset('img/571168370_122126454290968359_877040687061528344_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace6.jpeg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/571168370_122126454290968359_877040687061528344_n.jpg') }}" data-lightbox="gallery"></a>
@@ -121,7 +174,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom interior">
-				<img src="{{ asset('img/571284060_122126454374968359_3826126251373686210_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/571284060_122126454374968359_3826126251373686210_n.jpg') }}" data-lightbox="gallery"></a>
@@ -133,7 +186,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom interior">
-				<img src="{{ asset('img/572396894_122126454302968359_3627713918198532208_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/espace7.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/572396894_122126454302968359_3627713918198532208_n.jpg') }}" data-lightbox="gallery"></a>
@@ -145,7 +198,7 @@
 
 			<!-- - -->
 			<div class="item-gallery isotope-item bo-rad-10 hov-img-zoom events">
-				<img src="{{ asset('img/576239675_122128832876968359_9009437669825423605_n.jpg') }}" alt="IMG-GALLERY">
+				<img src="{{ asset('img/reserv.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/576239675_122128832876968359_9009437669825423605_n.jpg') }}" data-lightbox="gallery"></a>

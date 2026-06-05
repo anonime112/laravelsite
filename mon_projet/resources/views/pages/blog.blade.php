@@ -1,557 +1,62 @@
 @extends('layouts.app')
 
-@section('title', 'Actualités')
+@section('title', 'Actualités — Iguyzza')
 
 @section('content')
 <!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url('{{ asset('images/bg-title-page-03.jpg') }}');">
-		<h2 class="tit6 t-center">
-			Blog
-		</h2>
-	</section>
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url('{{ asset('images/bg-title-page-03.jpg') }}');">
+	<h2 class="tit6 t-center">Actualités</h2>
+</section>
 
+<div class="ig-orange-band"></div>
 
-	<!-- Content page -->
-	<section>
-		<div class="bread-crumb bo5-b p-t-17 p-b-17">
-			<div class="container">
-				<a href="{{ route('home') }}" class="txt27">
-					Accueil
-				</a>
-
-				<span class="txt29 m-l-10 m-r-10">/</span>
-
-				<span class="txt29">
-					Actualités
-				</span>
-			</div>
+<!-- Content page -->
+<section class="bg1-pattern p-t-110 p-b-100">
+	<div class="container">
+		<div class="title-section-ourmenu t-center m-b-45">
+			<a href="{{ route('home') }}" class="logo-section-wrap m-b-15">
+				<img src="{{ asset('images/icons/logo.png') }}" alt="Iguyzza" class="logo-section logo-section--sm">
+			</a>
+			<span class="tit2 t-center">Actualités</span>
+			<h3 class="tit5 t-center m-t-2">Chez Iguyzza</h3>
 		</div>
 
-		<div class="container">
+		@if($posts->isNotEmpty())
 			<div class="row">
-				<div class="col-md-8 col-lg-9">
-					<div class="p-t-80 p-b-124 bo5-r h-full p-r-50 p-r-0-md bo-none-md">
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-05.jpg') }}" alt="IMG-BLOG">
+				@foreach($posts as $post)
+					<div class="col-md-6 col-lg-4 p-b-35">
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
+								<a href="{{ route('blog.detail', $post->slug) }}">
+									<img src="{{ asset($post->image_path ?: 'images/blog-01.jpg') }}" alt="{{ $post->title }}">
 								</a>
 
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										28
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
+								@if($post->published_at)
+									<div class="time-blog">{{ $post->published_at->format('d M Y') }}</div>
+								@endif
 							</div>
 
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Cooking recipe Cuisine</a>
-								</h4>
+							<div class="wrap-text-blo1 p-t-35">
+								<a href="{{ route('blog.detail', $post->slug) }}">
+									<h4 class="txt5 color0-hov trans-0-4 m-b-13">{{ $post->title }}</h4>
+								</a>
 
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
+								<p class="m-b-20">{{ $post->excerpt }}</p>
 
-									<span>
-										28 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Découvrez nos actualités : soirées lounge, nouveautés de la carte et événements à Riviera Palmeraie.
-								</p>
-
-								<a href="{{ route('blog.detail') }}" class="dis-block txt4 m-t-30">
+								<a href="{{ route('blog.detail', $post->slug) }}" class="txt4">
 									Lire la suite
 									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
 								</a>
 							</div>
-						</div>
-
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-06.jpg') }}" alt="IMG-BLOG">
-								</a>
-
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										20
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
-							</div>
-
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Cocktails et tapas fraîchement préparés</a>
-								</h4>
-
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										20 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Découvrez nos actualités : soirées lounge, nouveautés de la carte et événements à Riviera Palmeraie.
-								</p>
-
-								<a href="{{ route('blog.detail') }}" class="dis-block txt4 m-t-30">
-									Lire la suite
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-04.jpg') }}" alt="IMG-BLOG">
-								</a>
-
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										16
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
-							</div>
-
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Style the Wedding Party</a>
-								</h4>
-
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										16 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Découvrez nos actualités : soirées lounge, nouveautés de la carte et événements à Riviera Palmeraie.
-								</p>
-
-								<a href="{{ route('blog.detail') }}" class="dis-block txt4 m-t-30">
-									Lire la suite
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-07.jpg') }}" alt="IMG-BLOG">
-								</a>
-
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										15
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
-							</div>
-
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Best Places for Wine</a>
-								</h4>
-
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										15 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Découvrez nos actualités : soirées lounge, nouveautés de la carte et événements à Riviera Palmeraie.
-								</p>
-
-								<a href="{{ route('blog.detail') }}" class="dis-block txt4 m-t-30">
-									Lire la suite
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-
-						<!-- Block4 -->
-						<div class="blo4 p-b-63">
-							<div class="pic-blo4 hov-img-zoom bo-rad-10 pos-relative">
-								<a href="{{ route('blog.detail') }}">
-									<img src="{{ asset('images/blog-10.jpg') }}" alt="IMG-BLOG">
-								</a>
-
-								<div class="date-blo4 flex-col-c-m">
-									<span class="txt30 m-b-4">
-										12
-									</span>
-
-									<span class="txt31">
-										Dec, 2018
-									</span>
-								</div>
-							</div>
-
-							<div class="text-blo4 p-t-33">
-								<h4 class="p-b-16">
-									<a href="{{ route('blog.detail') }}" class="tit9">Best Places for Wine</a>
-								</h4>
-
-								<div class="txt32 flex-w p-b-24">
-									<span>
-										by Admin
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										12 December, 2018
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										Cooking, Food
-										<span class="m-r-6 m-l-4">|</span>
-									</span>
-
-									<span>
-										8 commentaires
-									</span>
-								</div>
-
-								<p>
-									Découvrez nos actualités : soirées lounge, nouveautés de la carte et événements à Riviera Palmeraie.
-								</p>
-
-								<a href="{{ route('blog.detail') }}" class="dis-block txt4 m-t-30">
-									Lire la suite
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-
-						<!-- Pagination -->
-						<div class="pagination flex-l-m flex-w m-l--6 p-t-25">
-							<a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
-							<a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
 						</div>
 					</div>
-				</div>
-
-				<div class="col-md-4 col-lg-3">
-					<div class="sidebar2 p-t-80 p-b-80 p-l-20 p-l-0-md p-t-0-md">
-						<!-- Search -->
-						<div class="search-sidebar2 size12 bo2 pos-relative">
-							<input class="input-search-sidebar2 txt10 p-l-20 p-r-55" type="text" name="search" placeholder="Search">
-							<button class="btn-search-sidebar2 flex-c-m ti-search trans-0-4"></button>
-						</div>
-
-						<!-- Categories -->
-						<div class="categories">
-							<h4 class="txt33 bo5-b p-b-35 p-t-58">
-								Categories
-							</h4>
-
-							<ul>
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Cooking recipe
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Cuisine foods
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Événements Design
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										Lounge Place
-									</a>
-								</li>
-
-								<li class="bo5-b p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										WordPress
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<!-- Most Popular -->
-						<div class="popular">
-							<h4 class="txt33 p-b-35 p-t-58">
-								Most popular
-							</h4>
-
-							<ul>
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-11.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Best Places for Wine
-										</a>
-
-										<span class="txt14">
-											3 days ago
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-12.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Eggs and Cheese
-										</a>
-
-										<span class="txt14">
-											July 2, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-13.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Style the Wedding Party
-										</a>
-
-										<span class="txt14">
-											May 28, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-14.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Cooking recipe Cuisine
-										</a>
-
-										<span class="txt14">
-											May 25, 2017
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-w m-b-25">
-									<div class="size16 bo-rad-10 wrap-pic-w of-hidden m-r-18">
-										<a href="#">
-											<img src="{{ asset('images/blog-15.jpg') }}" alt="IMG-BLOG">
-										</a>
-									</div>
-
-									<div class="size28">
-										<a href="#" class="dis-block txt28 m-b-8">
-											Cocktails et tapas fraîchement préparés
-										</a>
-
-										<span class="txt14">
-											May 2, 2017
-										</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-
-						<!-- Archive -->
-						<div class="archive">
-							<h4 class="txt33 p-b-20 p-t-43">
-								Archive
-							</h4>
-
-							<ul>
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										uly 2018
-									</a>
-
-									<span class="txt29">
-										(9)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										June 2018
-									</a>
-
-									<span class="txt29">
-										(39)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										May 2018
-									</a>
-
-									<span class="txt29">
-										(29)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										April  2018
-									</a>
-
-									<span class="txt29">
-										(35)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										March 2018
-									</a>
-
-									<span class="txt29">
-										(22)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										February 2018
-									</a>
-
-									<span class="txt29">
-										(32)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										January 2018
-									</a>
-
-									<span class="txt29">
-										(21)
-									</span>
-								</li>
-
-								<li class="flex-sb-m p-t-8 p-b-8">
-									<a href="#" class="txt27">
-										December 2017
-									</a>
-
-									<span class="txt29">
-										(26)
-									</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
-		</div>
-	</section>
+		@else
+			<div class="cart-empty t-center">
+				<p class="txt23">Aucun article n'est encore publié.</p>
+			</div>
+		@endif
+	</div>
+</section>
 @endsection
