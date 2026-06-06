@@ -42,14 +42,19 @@
 								<li>
 									<a href="{{ route('contact') }}">Contact</a>
 								</li>
+								<li>
+											<a href="{{ route('cart') }}" class="cart-nav-link trans-0-4" aria-label="Voir le panier">
+							<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+							<span class="cart-count">0</span>
+						</a>
+								</li>
 							</ul>
 						</nav>
 					</div>
 
 					<!-- Social -->
 					<div class="social flex-w flex-l-m p-r-20">
-						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
+					
 						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
 						<a href="{{ route('cart') }}" class="cart-nav-link trans-0-4" aria-label="Voir le panier">
 							<i class="fa fa-shopping-cart" aria-hidden="true"></i>

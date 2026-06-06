@@ -89,6 +89,49 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 
 
+
+
+
+
+
+
+
+
+
+.blog-scroll-container{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:20px 0;
+
+    scroll-behavior:smooth;
+}
+
+.blog-scroll-container::-webkit-scrollbar{
+    height:8px;
+}
+
+.blog-scroll-container::-webkit-scrollbar-thumb{
+    background:#d9d9d9;
+    border-radius:10px;
+}
+
+.blog-scroll-item{
+    flex:0 0 350px;
+}
+
+.blog-scroll-item .blo1{
+    width:100%;
+}
+.section-slide p {
+    font-size: 22px;
+    font-family: Courgette, cursive;
+    font-weight: 400;
+    color: #ffffff;
+
+    text-align: center;
+}
 /*[ RESTYLE TAG ]
 ///////////////////////////////////////////////////////////
 */
@@ -1640,13 +1683,13 @@ body {padding-right: 0px !important;}
 .logo-section {
   display: block;
   margin: 0 auto;
-  max-width: 180px;
+  max-width: 270px;
   width: 100%;
   height: auto;
 }
 
 .logo-section--sm {
-  max-width: 130px;
+  max-width: 270px;
 }
 
 /* Orange band separator */
@@ -1717,6 +1760,14 @@ body {padding-right: 0px !important;}
 	border-radius: 8px;
 	transition: all 0.3s ease;
   min-width: 32vw;
+}
+.blo5{
+  	padding: 15px;
+	background-color: #f9f9f9;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+  min-width: 32vw;
+  margin-top:10vw ;
 }
 .section-booking img {
   min-width: 40vw;
@@ -1810,8 +1861,7 @@ body {padding-right: 0px !important;}
 .section-reservation,
 .section-contact,
 .section-cart {
-  background-color: #fff9f5;
-  background-image: radial-gradient(circle at 18% 18%, rgba(245, 111, 59, 0.10), transparent 24%), radial-gradient(circle at 86% 12%, rgba(255, 200, 87, 0.16), transparent 22%);
+  background-color: #ffffff;
 }
 
 .tit2,

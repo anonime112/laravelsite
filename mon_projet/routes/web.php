@@ -9,6 +9,8 @@ use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     $events = Event::query()
@@ -50,13 +52,56 @@ Route::post('/reservation', function (Request $request) {
         'whatsapp' => $validated['phone'] ?? null,
     ]);
 
-    Reservation::create([
+
+   $Reservation =  Reservation::create([
         'customer_id' => $customer->id,
         'reservation_date' => filled($validated['date'] ?? null) ? date('Y-m-d', strtotime($validated['date'])) : null,
         'reservation_time' => $validated['time'] ?? null,
         'people_count' => (int) preg_replace('/\D+/', '', $validated['people'] ?? '1') ?: 1,
         'notes' => $validated['notes'] ?? null,
     ]);
+
+
+$message = "
+🍽 NOUVELLE RESERVATION 
+
+👤 Client : {$customer->name}
+
+📱 WhatsApp : {$customer->whatsapp}
+
+📧 Email : {$customer->email}
+
+
+
+
+━━━━━━━━━━━━━━
+date : {$Reservation->date}
+heure : {$Reservation ->time }
+personnes : {$Reservation->people}
+
+━━━━━━━━━━━━━━
+
+";
+
+Http::post(
+    "https://api.ultramsg.com/".env('ULTRAMSG_INSTANCE')."/messages/chat",
+    [
+        'token' => env('ULTRAMSG_TOKEN'),
+        'to' => env('GERANT_WHATSAPP'),
+        'body' => $message
+    ]
+);
+
+
+
+
+
+
+
+
+
+
+
 
     return back()->with('success', 'Votre réservation a bien été enregistrée.');
 })->name('reservation.store');
@@ -120,18 +165,94 @@ Route::post('/orders', function (Request $request) {
         'delivery_fee' => 0,
         'total' => $subtotal,
     ]);
+$orderDetails = "";
 
     foreach ($items as $item) {
-        $quantity = (int) $item['quantity'];
-        $unitPrice = (int) $item['price'];
 
-        $order->items()->create([
-            'name' => $item['name'],
-            'unit_price' => $unitPrice,
-            'quantity' => $quantity,
-            'line_total' => $unitPrice * $quantity,
-        ]);
-    }
+    $quantity = (int) $item['quantity'];
+    $unitPrice = (int) $item['price'];
 
-    return back()->with('success', "Votre commande {$order->order_number} a bien été enregistrée.");
+    $order->items()->create([
+        'name' => $item['name'],
+        'unit_price' => $unitPrice,
+        'quantity' => $quantity,
+        'line_total' => $unitPrice * $quantity,
+    ]);
+
+    
+    $subtotal = $item['price'] * $item['quantity'];
+
+    $orderDetails .=
+    "🍴 ".$item['name']."\n".
+    "Qté : ".$item['quantity']."\n".
+    "Prix : ".number_format($item['price'])." FCFA\n".
+    "Sous-total : ".number_format($subtotal)." FCFA\n\n";
+}
+
+
+
+
+$pdf = Pdf::loadView('pdf.order', [
+    'order' => $order,
+    'customer' => $customer,
+    'items' => $items,
+    'subtotal' => $subtotal,
+]);
+
+
+$message = "
+🍽 NOUVELLE COMMANDE #{$order->order_number}
+
+👤 Client : {$customer->name}
+
+📱 WhatsApp : {$customer->whatsapp}
+
+📧 Email : {$customer->email}
+
+🚚 Livraison : {$order->delivery_method}
+
+📝 Notes :
+{$order->notes}
+
+━━━━━━━━━━━━━━
+
+{$orderDetails}
+
+━━━━━━━━━━━━━━
+
+💰 TOTAL :
+".number_format($order->total)." FCFA
+
+
+";
+
+Http::post(
+    "https://api.ultramsg.com/".env('ULTRAMSG_INSTANCE')."/messages/chat",
+    [
+        'token' => env('ULTRAMSG_TOKEN'),
+        'to' => env('GERANT_WHATSAPP'),
+        'body' => $message
+    ]
+);
+
+
+
+
+
+
+Storage::disk('public')->makeDirectory('orders');
+
+$pdfFileName = 'commande-' . $order->order_number . '.pdf';
+
+Storage::disk('public')->put(
+    'orders/' . $pdfFileName,
+    $pdf->output()
+);
+
+    return back()->with('success', "Votre commande {$order->order_number} a bien été enregistrée.",['order_id' => $order->id])
+    ->with('customer_name', $customer->name)
+    ->with('customer_whatsapp', $customer->whatsapp)
+    ->with('customer_email', $customer->email)
+    ->with('customer_delivery', $order->delivery_method)
+    ->with('customer_notes', $order->notes);
 })->name('orders.store');

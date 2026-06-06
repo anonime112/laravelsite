@@ -14,6 +14,7 @@
 			</h2>
 		</div>
 	</section>
+	<div class="ig-orange-band"></div>
 
 
 
@@ -105,7 +106,7 @@
 				<img src="{{ asset('img/espace1.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/548330204_122119031846968359_2643696780765774991_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Événement VIP" data-price="50000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -117,7 +118,7 @@
 				<img src="{{ asset('img/espace2.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/561537983_122125478630968359_5990106595369622758_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Plat signature" data-price="15000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -129,7 +130,7 @@
 				<img src="{{ asset('img/espace3.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/565655299_122125014536968359_8373653522952522296_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace3.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Réservation événement" data-price="30000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -141,7 +142,7 @@
 				<img src="{{ asset('img/espace4.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/566199314_122125219058968359_6497133020676800954_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace4.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Cuisine gourmande" data-price="12000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -153,7 +154,7 @@
 				<img src="{{ asset('img/espace5.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/567521816_122125478618968359_1312821641899528111_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace5.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Dessert artisanal" data-price="8000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -165,7 +166,7 @@
 				<img src="{{ asset('img/espace6.jpeg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/571168370_122126454290968359_877040687061528344_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace6.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Espace VIP" data-price="40000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -177,7 +178,7 @@
 				<img src="{{ asset('img/espace.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/571284060_122126454374968359_3826126251373686210_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Décoration intérieure" data-price="25000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -189,7 +190,7 @@
 				<img src="{{ asset('img/espace7.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/572396894_122126454302968359_3627713918198532208_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace7.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Ambiance lounge" data-price="20000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>
@@ -201,7 +202,7 @@
 				<img src="{{ asset('img/reserv.jpg') }}" alt="IMG-GALLERY">
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
-					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/576239675_122128832876968359_9009437669825423605_n.jpg') }}" data-lightbox="gallery"></a>
+					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
 					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Événement spécial" data-price="35000">
 						<i class="fa fa-plus m-r-5"></i>Ajouter
 					</button>

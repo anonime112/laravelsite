@@ -13,9 +13,13 @@
 							Bienvenue chez
 						</span>
 
-						<h2 class="caption2-slide1 tit1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
+						<h2 class="caption2-slide1 tit1 t-center animated visible-false" data-appear="fadeInUp">
 							Iguyzza
 						</h2>
+						<p data-appear="fadeInDown" class="caption2-slide1  t-center animated visible-false  m-b-37">
+							 Le goût des bons moments
+							
+						</p>
 
 						<div class="wrap-btn-slide1 animated visible-false" data-appear="zoomIn">
 							<!-- Button1 -->
@@ -69,7 +73,7 @@
 			<div class="wrap-slick1-dots"></div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 	<!-- Bienvenue -->
 	<section class="section-welcome bg1-pattern p-t-120 p-b-105">
 		<div class="container">
@@ -317,46 +321,9 @@
 
 		</div>
 	</section>
+<div class="ig-orange-band"></div>
 
 
-	@if(isset($events) && $events->isNotEmpty())
-	<!-- Events from database -->
-	<section class="section-event-db bg1-pattern p-t-100 p-b-100">
-		<div class="container">
-			<div class="title-event t-center m-b-52">
-				<span class="tit2 p-l-15 p-r-15">Prochains</span>
-				<h3 class="tit6 t-center p-l-15 p-r-15 p-t-3">Événements</h3>
-			</div>
-
-			<div class="row">
-				@foreach($events as $event)
-					<div class="col-md-4 p-b-30">
-						<div class="blo1">
-							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
-								<img src="{{ asset($event->image_path ?: 'images/bg-event-01.jpg') }}" alt="{{ $event->title }}">
-							</div>
-
-							<div class="wrap-text-blo1 p-t-35">
-								<h4 class="txt5 color0-hov trans-0-4 m-b-13">{{ $event->title }}</h4>
-
-								@if($event->starts_at)
-									<p class="txt4 m-b-12">{{ $event->starts_at->format('d/m/Y à H:i') }}</p>
-								@endif
-
-								<p class="m-b-20">{{ $event->description }}</p>
-
-								<a href="{{ route('reservation') }}" class="txt4">
-									Réserver
-									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				@endforeach
-			</div>
-		</div>
-	</section>
-	@endif
 
 	<!-- Event -->
 	<section class="section-event">
@@ -628,7 +595,7 @@
 			<div class="wrap-slick2-dots"></div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 	<!-- Booking -->
 	<section class="section-booking bg1-pattern p-t-100 p-b-110">
 		<div class="container">
@@ -763,7 +730,7 @@
 			</div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 	<!-- Review -->
 	<!-- <section class="section-review p-t-115">
 	
@@ -889,7 +856,7 @@
 			</div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 	<!-- Blog -->
 	<section class="section-blog bg-white p-t-115 p-b-123">
@@ -907,21 +874,21 @@
 				</h3>
 			</div>
 
-			<div class="row">
-				<div class="col-md-4 p-t-30">
+			<div class="  blog-scroll-container">
+				<div class="col-md-4 p-t-30 blog-scroll-item">
 					<!-- Block1 -->
 					<div class="blo1">
 						<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
 							<a href="{{ route('blog') }}"><img src="{{ asset('img/bg1.jpg') }}" alt="IMG-INTRO"></a>
 
-							<div class="time-blog">
-								21 Dec 2017
-							</div>
+						 
+ 
+
 						</div>
 
 						<div class="wrap-text-blo1 p-t-35">
 							<a href="{{ route('blog') }}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-								Soirées lounge à Abidjan
+								Vendredi : le Brunch des Carnivores
 							</h4></a>
 
 							<p class="m-b-20">
@@ -936,20 +903,18 @@
 					</div>
 				</div>
 
-				<div class="col-md-4 p-t-30">
+				<div class="col-md-4 p-t-30 blog-scroll-item">
 					<!-- Block1 -->
 					<div class="blo1">
 						<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
 							<a href="{{ route('blog') }}"><img src="{{ asset('img/bg2.jpg') }}" alt="IMG-INTRO"></a>
 
-							<div class="time-blog">
-								15 Dec 2017
-							</div>
+					
 						</div>
 
 						<div class="wrap-text-blo1 p-t-35">
 							<a href="{{ route('blog') }}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-								Notre carte du moment
+						Samedi :  Karaoke
 							</h4></a>
 
 							<p class="m-b-20">
@@ -964,20 +929,18 @@
 					</div>
 				</div>
 
-				<div class="col-md-4 p-t-30">
+				<div class="col-md-4 p-t-30 blog-scroll-item">
 					<!-- Block1 -->
 					<div class="blo1">
 						<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom pos-relative">
 							<a href="{{ route('blog') }}"><img src="{{ asset('img/event1.jpg') }}" alt="IMG-INTRO"></a>
 
-							<div class="time-blog">
-								12 Dec 2017
-							</div>
+						
 						</div>
 
 						<div class="wrap-text-blo1 p-t-35">
 							<a href="{{ route('blog') }}"><h4 class="txt5 color0-hov trans-0-4 m-b-13">
-								Événements &amp; traiteur
+								Vendredi : Kompa Party
 							</h4></a>
 
 							<p class="m-b-20">
@@ -991,8 +954,38 @@
 						</div>
 					</div>
 				</div>
+				
+				
+@if(isset($events) && $events->isNotEmpty())
+					@foreach($events as $event)
+					<div class="col-md-4 p-b-30 blog-scroll-item">
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+								<img src="{{ asset($event->image_path ?: 'images/bg-event-01.jpg') }}" alt="{{ $event->title }}">
+							</div>
 
+							<div class="wrap-text-blo1 p-t-35">
+								<h4 class="txt5 color0-hov trans-0-4 m-b-13">{{ $event->title }}</h4>
+
+								@if($event->starts_at)
+									<p class="txt4 m-b-12">{{ $event->starts_at->format('d/m/Y à H:i') }}</p>
+								@endif
+
+								<p class="m-b-20">{{ $event->description }}</p>
+
+								<a href="{{ route('reservation') }}" class="txt4">
+									Réserver
+									<i class="fa fa-long-arrow-right m-l-10" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				@endforeach
+	@endif
 			</div>
+				
+
+
 		</div>
 	</section>
 

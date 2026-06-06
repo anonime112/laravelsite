@@ -15,7 +15,7 @@
 		</div>
 	</section>
 
-
+<div class="ig-orange-band"></div>
 	<!-- Notre histoire -->
 	<section class="bg2-pattern p-t-116 p-b-110 t-center p-l-15 p-r-15">
 		<a href="{{ route('home') }}" class="logo-section-wrap m-b-25">

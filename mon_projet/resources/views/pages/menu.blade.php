@@ -14,17 +14,48 @@
 </section>
 
 <div class="ig-orange-band"></div>
+<div  class="content-intro bg2-pattern p-t-77 p-b-133">
+          <div class="container  ">
+				<div class="row">
+					<div class="col-md-4 p-t-30">
+						<!-- Block1 -->
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+								<a href="#"><img src="{{ asset('img/plats6.jpeg') }}" alt="IMG-INTRO"></a>
+							</div>
 
-<!-- Main menu -->
-<section class="container section-mainmenu p-t-110 p-b-100 bg1-pattern">
-	<div class="container t-center m-b-50">
-		<a href="{{ route('home') }}" class="logo-section-wrap">
-			<img src="{{ asset('images/icons/logo.png') }}" alt="Iguyzza" class="logo-section logo-section--sm">
-		</a>
+						</div>
+					</div>
+
+					<div class="col-md-4 p-t-30">
+						<!-- Block1 -->
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+								<a href="#"><img src="{{ asset('img/plats5.jpeg') }}" alt="IMG-INTRO"></a>
+							</div>
+
+							
+						</div>
+					</div>
+
+					<div class="col-md-4 p-t-30">
+						<!-- Block1 -->
+						<div class="blo1">
+							<div class="wrap-pic-blo1 bo-rad-10 hov-img-zoom">
+								<a href="#"><img src="{{ asset('img/plats7.jpeg') }}" alt="IMG-INTRO"></a>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+				<div class="container t-center m-b-5">
+
 	</div>
 
 	@if($categories->isNotEmpty())
-		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-60">
+		<div class="wrap-label-gallery filter-tope-group size27 flex-w flex-sb-m m-l-r-auto flex-col-c-sm p-l-15 p-r-15 m-b-20">
 			<button class="label-gallery txt26 trans-0-4 is-actived" data-filter="*">Tout</button>
 
 			@foreach($categories as $category)
@@ -33,6 +64,13 @@
 				</button>
 			@endforeach
 		</div>
+</div>
+
+			
+
+<!-- Main menu -->
+<section class="container section-mainmenu p-t-110 p-b-100 ">
+
 
 		<div class="wrap-menu p-l-25 p-r-25">
 			@foreach($categories as $category)

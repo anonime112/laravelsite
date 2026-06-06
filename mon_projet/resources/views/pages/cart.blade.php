@@ -22,6 +22,19 @@
 	<div class="container">
 		@if(session('success'))
 			<div class="alert alert-success t-center">{{ session('success') }}</div>
+			<div class="alert alert-success text-center">
+
+    <h4>
+        ✅ Commande envoyée avec succès
+    </h4>
+
+    <p>
+        Merci pour votre commande.
+    </p>
+
+    <div id="pdf-download-container"></div>
+
+</div>
 		@endif
 
 		<div class="row">
@@ -129,6 +142,7 @@
 								Envoyer la demande
 							</button>
 						</form>
+						
 					</div>
 				</div>
 
@@ -143,3 +157,169 @@
 	</div>
 </section>
 @endsection
+
+
+@if(session('success'))
+
+
+
+@endif
+
+
+
+
+@if(session('success'))
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const cart = JSON.parse(
+        localStorage.getItem('cart')
+    ) || [];
+
+    if(cart.length === 0) return;
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF();
+
+    let y = 20;
+
+    pdf.setFontSize(18);
+    pdf.text('IGUYZZA RESTAURANT', 20, y);
+
+    y += 15;
+
+    pdf.setFontSize(12);
+
+    pdf.text(
+        'Commande #{{ session("order_id") }}',
+        20,
+        y
+    );
+
+    y += 15;
+
+    pdf.text(
+        'Nom : {{ session("customer_name") }}',
+        20,
+        y
+    );
+
+    y += 10;
+
+    pdf.text(
+        'WhatsApp : {{ session("customer_whatsapp") }}',
+        20,
+        y
+    );
+
+    y += 10;
+
+    pdf.text(
+        'Email : {{ session("customer_email") }}',
+        20,
+        y
+    );
+
+    y += 10;
+
+    pdf.text(
+        'Mode : {{ session("customer_delivery") }}',
+        20,
+        y
+    );
+
+    y += 10;
+
+    pdf.text(
+        'Notes : {{ session("customer_notes") }}',
+        20,
+        y
+    );
+
+    y += 15;
+
+    pdf.line(20, y, 190, y);
+
+    y += 10;
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        const subtotal =
+            item.price * item.quantity;
+
+        total += subtotal;
+
+        pdf.text(
+            item.name,
+            20,
+            y
+        );
+
+        pdf.text(
+            item.quantity + ' x ' +
+            item.price.toLocaleString() +
+            ' FCFA',
+            90,
+            y
+        );
+
+        pdf.text(
+            subtotal.toLocaleString() +
+            ' FCFA',
+            150,
+            y
+        );
+
+        y += 10;
+
+        if(y > 260)
+        {
+            pdf.addPage();
+            y = 20;
+        }
+    });
+
+    y += 10;
+
+    pdf.line(20, y, 190, y);
+
+    y += 15;
+
+    pdf.setFontSize(14);
+
+    pdf.text(
+        'TOTAL : ' +
+        total.toLocaleString() +
+        ' FCFA',
+        20,
+        y
+    );
+
+    const pdfBlob = pdf.output('blob');
+
+    const pdfUrl =
+        URL.createObjectURL(pdfBlob);
+
+    document
+        .getElementById('pdf-download-container')
+        .innerHTML = `
+            <a href="${pdfUrl}"
+               download="facture-{{ session('order_id') }}.pdf"
+               class="btn1 flex-c-m size13 txt11 trans-0-4">
+
+               Télécharger ma facture
+
+            </a>
+        `;
+
+    localStorage.removeItem('cart');
+
+});
+</script>
+
+@endif

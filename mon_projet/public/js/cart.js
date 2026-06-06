@@ -347,7 +347,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (cartPayload) {
                 cartPayload.value = JSON.stringify(cart);
             }
-        });
+        }
+    );
     }
 });
 

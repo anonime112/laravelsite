@@ -14,7 +14,7 @@
 			</h2>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 
 	<!-- Contact form -->
