@@ -33,7 +33,7 @@
 			Iguyzza est un concept lounge &amp; événementiel implanté à Riviera Palmeraie, Cocody, Abidjan. Nous réunissons sous un même toit un restaurant raffiné, un bar lounge, un espace dédié aux événements privés et professionnels, ainsi qu'un service traiteur pour vos réceptions en Côte d'Ivoire.
 		</p>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 	<!-- Video -->
 	<section class="section-video parallax100" style="background-image: url('{{ asset('img/bg22.jpeg') }}');">
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 	<!-- Cuisine & Ambiance-->
 	<section class="bg1-pattern p-t-120 p-b-105">
@@ -110,14 +110,14 @@
 			</div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 	<!-- Banner -->
 	<div class="parallax0 parallax100" style="background-image: url('{{ asset('img/bg11.jpeg') }}');">
 		<div class="overlay0-parallax t-center size33"></div>
 	</div>
 
-
+<div class="ig-orange-band"></div>
 	<!-- équipe -->
 	<section class="section-chef bgwhite p-t-115 p-b-95">
 		<div class="container t-center">
@@ -201,7 +201,7 @@
 			</div>
 		</div>
 	</section>
-
+<div class="ig-orange-band"></div>
 
 	<!-- Sign up -->
 	<div class="section-signup bg1-pattern p-t-85 p-b-85">

@@ -107,9 +107,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Événement VIP" data-price="50000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+					
 				</div>
 			</div>
 
@@ -119,9 +117,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Plat signature" data-price="15000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 
@@ -131,9 +127,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace3.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Réservation événement" data-price="30000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 
@@ -143,9 +137,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace4.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Cuisine gourmande" data-price="12000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+					
 				</div>
 			</div>
 
@@ -155,9 +147,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace5.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Dessert artisanal" data-price="8000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 
@@ -167,9 +157,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace6.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Espace VIP" data-price="40000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+					
 				</div>
 			</div>
 
@@ -179,9 +167,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Décoration intérieure" data-price="25000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 
@@ -191,9 +177,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace7.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Ambiance lounge" data-price="20000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 
@@ -203,9 +187,7 @@
 
 				<div class="overlay-item-gallery trans-0-4 flex-c-m flex-col">
 					<a class="btn-show-gallery flex-c-m fa fa-search m-b-10" href="{{ asset('img/espace2.jpg') }}" data-lightbox="gallery"></a>
-					<button class="btn-add-cart btn1 flex-c-m size13 txt11 trans-0-4" data-name="Événement spécial" data-price="35000">
-						<i class="fa fa-plus m-r-5"></i>Ajouter
-					</button>
+				
 				</div>
 			</div>
 		</div>

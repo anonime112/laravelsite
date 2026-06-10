@@ -55,7 +55,7 @@
 
 			<div class="col-md-4 col-lg-4 p-b-30">
 				<div class="wrap-cart-summary bgwhite">
-					<h3 class="tit5 t-center m-b-30">Récapitulatif</h3>
+					<h3 class=" t-center m-b-30">Récapitulatif</h3>
 
 					<div class="cart-summary">
 						<div class="flex-w flex-b m-b-20">

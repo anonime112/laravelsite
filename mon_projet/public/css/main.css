@@ -730,14 +730,17 @@ input[type="date" i] {
   border-top: 2px solid #F56F3B;
   border-bottom: 2px solid #F56F3B;
 }
-
+.social {padding-right: 0px;
+  display: none;
+  }
 @media (max-width: 1200px) {
   .main_menu > li {
     margin-left: 4px;
     margin-right: 4px;
   }
 
-  .social {padding-right: 0px;}
+  
+   
 
   .logo {
     height: 45px;
@@ -751,6 +754,10 @@ input[type="date" i] {
 
   .wrap_header {
     height: 100px;
+  }
+  .social {
+    display: block;
+    padding-right: 20px;
   }
 }
 

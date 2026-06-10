@@ -10,7 +10,7 @@
 				<img src="{{ asset('images/icons/logo.png') }}" alt="Iguyzza" class="logo-section">
 			</a>
 			<h2 class="tit6 t-center">
-				RÃ©servation
+				Réservation
 			</h2>
 		</div>
 	</section>
@@ -23,11 +23,11 @@
 				<div class="col-lg-12 p-b-30">
 					<div class="t-center">
 						<span class="tit2 t-center">
-							RÃ©servation
+							Réservation
 						</span>
 
 						<h3 class="tit3 t-center m-b-35 m-t-2">
-							RÃ©server une table
+							Réserver une table
 						</h3>
 					</div>
 
@@ -121,9 +121,9 @@
 							</div>
 
 							<div class="col-md-4">
-								<!-- TÃ©lÃ©phone -->
+								<!-- Téléphone -->
 								<span class="txt9">
-									TÃ©lÃ©phone
+									Téléphone
 								</span>
 
 								<div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
@@ -147,7 +147,7 @@
 						<div class="wrap-btn-booking flex-c-m m-t-6">
 							<!-- Button3 -->
 							<button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">
-								RÃ©server
+								Réserver
 							</button>
 						</div>
 					</form>
@@ -157,25 +157,25 @@
 			<div class="info-reservation flex-w p-t-80">
 				<div class="size23 w-full-md p-t-40 p-r-30 p-r-0-md">
 					<h4 class="txt5 m-b-18">
-						RÃ©server par tÃ©lÃ©phone
+						Réserver par téléphone
 					</h4>
 
 					<p class="size25">
-						Pour une rÃ©servation de table ou d'information, contactez-nous au
+						Pour une réservation de table ou d'information, contactez-nous au
 						<span class="txt24">+225 07 00 00 00 00</span>
-						. Notre Ã©quipe vous rÃ©pond du lundi au dimanche.
+						. Notre équipe vous répond du lundi au dimanche.
 					</p>
 				</div>
 
 				<div class="size24 w-full-md p-t-40">
 					<h4 class="txt5 m-b-18">
-						RÃ©servation Ã©vÃ©nementielle
+						Réservation événementielle
 					</h4>
 
 					<p class="size26">
-						Mariages, anniversaires, sÃ©minaires et rÃ©ceptions : appelez le
+						Mariages, anniversaires, séminaires et rÃ©ceptions : appelez le
 						<span class="txt24">+225 07 00 00 00 00</span>
-						ou Ã©crivez Ã  contact@iguyzza.com pour un devis traiteur sur mesure.
+						ou écrivez Ã  contact@iguyzza.com pour un devis traiteur sur mesure.
 					</p>
 				</div>
 
